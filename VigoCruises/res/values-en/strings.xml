@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Vigo Cruise</string>
+    <string name="menu_settings">Settings</string>
+    <string name="image_content_description">Crucero</string>
+    
+    <string name="text.slora">Slora</string>
+    <string name="text.arrival">Arrival</string>
+    <string name="text.departure">Departure</string>
+    <string name="text.loading">"Loading. Please wait&#8230;"</string>
+    
+</resources>
