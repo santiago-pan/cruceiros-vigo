@@ -1,4 +1,4 @@
-# cruceiros-vigo
+# Vigo Cruises
 Android app showing Vigo city cruises.
 
 I’ve always liked big cruisers since I was a kid, especially from the engineering point of view, as a clear example of how far the technical capacity of the human being. 
