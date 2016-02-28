@@ -1,0 +1,29 @@
+<resources>
+
+    <style name="VigoCruisesTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/color_blue_dark</item>
+        <item name="colorPrimaryDark">@color/color_blue_super_dark</item>
+        <item name="colorAccent">@color/color_blue_dark</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:dividerVertical">@android:color/white</item>
+        <item name="android:actionModeSplitBackground">@android:color/white</item>
+    </style>
+
+    <style name="CruiseItemTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_marginLeft">5dip</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ProgressBarStyle">
+        <item name="android:layout_width">80dip</item>
+        <item name="android:layout_height">80dip</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:indeterminate">false</item>
+        <item name="android:max">60</item>
+        <item name="android:progress">0</item>
+    </style>
+
+</resources>

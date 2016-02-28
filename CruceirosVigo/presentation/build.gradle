@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.nadisam.cruceirosvigo"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 4
+        versionName "1.4"
+    }
+    signingConfigs {
+        release {
+            // To read environment variables start android studio with:
+            // /Applications/Android\ Studio.app/Contents/MacOS/studio
+            storeFile file(System.getenv("SANTI_RELEASE_APP_PRIVATE_KEY"))
+            storePassword System.getenv("SANTI_RELEASE_STORE_PW")
+            keyAlias System.getenv("SANTI_RELEASE_APP_ALIAS")
+            keyPassword System.getenv("SANTI_RELEASE_PW")
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+        checkReleaseBuilds false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+
+retrolambda {
+    jdk "/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home"
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.2.0'
+    compile('com.android.support:recyclerview-v7:22.2.0') {
+        exclude module: 'support-v4'
+    }
+    compile 'com.android.support:design:23.2.0'
+    compile 'com.android.support:cardview-v7:23.2.0'
+    compile 'javax.inject:javax.inject:1'
+    compile 'com.google.dagger:dagger:2.0'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    apt 'com.google.dagger:dagger-compiler:2.0'
+    provided 'javax.annotation:jsr250-api:1.0'
+//    testCompile 'junit:junit:4.12'
+//    testCompile 'org.robolectric:robolectric:3.0'
+//    androidTestCompile 'junit:junit:4.12'
+//    androidTestCompile 'org.robolectric:robolectric:3.0'
+    compile project(':domain')
+    compile project(':data')
+}

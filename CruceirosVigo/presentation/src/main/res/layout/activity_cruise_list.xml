@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/relativeLayout"
+                android:background="@color/colorBackground">
+
+    <fragment
+        android:id="@+id/fragmentCruiseList"
+        android:name="com.nadisam.cruceirosvigo.view.fragment.CruisesListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_cruises_list">
+    </fragment>
+
+</RelativeLayout>

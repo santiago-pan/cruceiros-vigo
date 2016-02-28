@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cruceiros Vigo</string>
+    <string name="sort.by.length">Longitud</string>
+    <string name="sort.by.date">Fecha</string>
+
+    <string name="cruise.length">Longitud: %d m</string>
+    <string name="cruise.arrive.time">Hora llegada: %s</string>
+    <string name="cruise.departure.time">Hora salida: %s</string>
+
+    <string name="menu.sort.by.length">Longitud</string>
+    <string name="menu.sort.by.date">Fecha</string>
+
+</resources>

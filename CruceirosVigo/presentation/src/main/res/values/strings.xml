@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Vigo Cruises</string>
+    <string name="sort.by.length">Length</string>
+    <string name="sort.by.date">Date</string>
+
+    <string name="cruise.length">Length: %d m</string>
+    <string name="cruise.arrive.time">Arrive time: %s</string>
+    <string name="cruise.departure.time">Departure time: %s</string>
+
+    <string name="menu.sort.by.length">Length</string>
+    <string name="menu.sort.by.date">Date</string>
+</resources>

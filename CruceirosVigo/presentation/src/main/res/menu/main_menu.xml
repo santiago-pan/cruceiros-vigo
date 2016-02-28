@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_sort_date"
+        android:orderInCategory="100"
+        android:title="@string/menu.sort.by.date"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_sort_length"
+        android:orderInCategory="100"
+        android:title="@string/sort.by.length"
+        app:showAsAction="never"/>
+
+</menu>
