@@ -37,8 +37,10 @@ public class ApplicationModule
         return this.application;
     }
 
-    @Provides @Singleton
-    ThreadExecutor provideThreadExecutor(JobExecutor jobExecutor) {
+    @Provides
+    @Singleton
+    ThreadExecutor provideThreadExecutor(JobExecutor jobExecutor)
+    {
         return jobExecutor;
     }
 

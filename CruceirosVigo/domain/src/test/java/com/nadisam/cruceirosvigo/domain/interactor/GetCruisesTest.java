@@ -1,8 +1,8 @@
-package com.nadisam.cruceirosvigo.domain;
+package com.nadisam.cruceirosvigo.domain.interactor;
 
+import com.nadisam.cruceirosvigo.domain.Cruise;
 import com.nadisam.cruceirosvigo.domain.executor.PostExecutionThread;
 import com.nadisam.cruceirosvigo.domain.executor.ThreadExecutor;
-import com.nadisam.cruceirosvigo.domain.interactor.GetCruises;
 import com.nadisam.cruceirosvigo.domain.repository.DataRepositoryInterface;
 
 import org.junit.Before;

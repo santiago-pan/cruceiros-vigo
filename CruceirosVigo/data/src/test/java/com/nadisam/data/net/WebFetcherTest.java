@@ -1,11 +1,9 @@
-package com.nadisam.data;
+package com.nadisam.data.net;
 
-import com.nadisam.cruceirosvigo.domain.Cruise;
+import com.nadisam.data.BuildConfig;
 import com.nadisam.data.cache.CruisesCache;
 import com.nadisam.data.entity.CruiseEntity;
 import com.nadisam.data.entity.mapper.WebContentMapper;
-import com.nadisam.data.net.MultipleWebFetcher;
-import com.nadisam.data.net.WebFetcher;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -22,12 +20,9 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-/**
- * To work on unit tests, switch the Test Artifact in the Build Variants view.
- */
 @RunWith(RobolectricGradleTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 21)
-public class WebFetcherUnitTest
+public class WebFetcherTest
 {
     private static final String TAG = "WebFetcherUnitTest";
 

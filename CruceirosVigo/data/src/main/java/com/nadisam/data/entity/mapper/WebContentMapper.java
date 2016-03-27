@@ -29,11 +29,11 @@ import rx.Subscriber;
 @Singleton
 public class WebContentMapper
 {
-    private static String TAG = "WebContentMapper";
+    private static String TAG = WebContentMapper.class.getName();
 
-    CruisesCache cruisesCache;
-    WebFetcherInterface webFetcher;
-    WebFetcherInterface multipleWebFetcher;
+    private CruisesCache cruisesCache;
+    private WebFetcherInterface webFetcher;
+    private WebFetcherInterface multipleWebFetcher;
 
     @Inject
     public WebContentMapper(CruisesCache cruisesCache, WebFetcher webFetcher, MultipleWebFetcher multipleWebFetcher)
@@ -43,6 +43,12 @@ public class WebContentMapper
         this.multipleWebFetcher = multipleWebFetcher;
     }
 
+    /**
+     * Processes the web content to retrieve the list of {@link CruiseEntity} and emits them in an
+     * Observable with them.
+     *
+     * @return Observable with the list of cruises.
+     */
     public Observable<List<CruiseEntity>> getCruises()
     {
         if (!cruisesCache.isCached()||(cruisesCache.isExpired()))

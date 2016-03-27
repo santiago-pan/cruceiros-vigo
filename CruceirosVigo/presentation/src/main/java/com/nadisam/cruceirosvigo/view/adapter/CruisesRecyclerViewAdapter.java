@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.nadisam.cruceirosvigo.R;
-import com.nadisam.cruceirosvigo.domain.Cruise;
 import com.nadisam.cruceirosvigo.model.CruiseModel;
 import com.nadisam.cruceirosvigo.view.activity.SortMenuOptionListener;
 
@@ -24,7 +23,6 @@ public class CruisesRecyclerViewAdapter extends RecyclerView.Adapter<CruisesRecy
 {
     private List<CruiseModel> mValues;
     private String length;
-    private String length_m;
     private String arrive_time;
     private String departure_time;
     private Context context;
@@ -75,7 +73,7 @@ public class CruisesRecyclerViewAdapter extends RecyclerView.Adapter<CruisesRecy
         return position;
     }
 
-    public void setCruisesCollection(List<CruiseModel> cruiseCollection)
+    public void setCruisesList(List<CruiseModel> cruiseCollection)
     {
         this.validateCruisesCollection(cruiseCollection);
         this.mValues = cruiseCollection;

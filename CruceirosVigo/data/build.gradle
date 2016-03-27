@@ -4,7 +4,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-        //classpath 'me.tatarka:gradle-retrolambda:3.2.5'
     }
 }
 
@@ -14,7 +13,7 @@ apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         minSdkVersion 15
@@ -43,7 +42,7 @@ retrolambda {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.squareup.okhttp3:okhttp:3.1.2'
     compile 'com.google.dagger:dagger:2.0'
     compile 'io.reactivex:rxjava:1.1.0'

@@ -37,6 +37,7 @@ public class CruisesCache implements CruisesCacheInterface
         if (cruisesEntity != null)
         {
             cruisesCache = cruisesEntity;
+            setLastCacheUpdateTimeMillis();
         }
     }
 

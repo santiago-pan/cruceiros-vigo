@@ -1,6 +1,7 @@
-package com.nadisam.data;
+package com.nadisam.data.entity.mapper;
 
 import com.nadisam.cruceirosvigo.domain.Cruise;
+import com.nadisam.data.BuildConfig;
 import com.nadisam.data.cache.CruisesCache;
 import com.nadisam.data.entity.CruiseEntity;
 import com.nadisam.data.entity.mapper.WebContentMapper;

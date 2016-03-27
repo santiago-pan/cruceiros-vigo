@@ -1,7 +1,7 @@
 package com.nadisam.cruceirosvigo.view;
 
 import com.nadisam.cruceirosvigo.model.CruiseModel;
-import java.util.Collection;
+
 import java.util.List;
 
 /**

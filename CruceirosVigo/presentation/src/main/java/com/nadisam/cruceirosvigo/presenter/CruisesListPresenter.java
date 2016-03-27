@@ -3,7 +3,7 @@ package com.nadisam.cruceirosvigo.presenter;
 import android.support.annotation.NonNull;
 
 import com.nadisam.cruceirosvigo.domain.Cruise;
-import com.nadisam.cruceirosvigo.domain.interactor.GetCruises;
+import com.nadisam.cruceirosvigo.domain.interactor.GetCruisesInterface;
 import com.nadisam.cruceirosvigo.internal.di.PerActivity;
 import com.nadisam.cruceirosvigo.mapper.CruiseModelMapper;
 import com.nadisam.cruceirosvigo.model.CruiseModel;
@@ -25,12 +25,12 @@ public class CruisesListPresenter implements Presenter
 {
 
     private CruisesListView viewListView;
-
-    private final GetCruises getCruisesUseCase;
-    private final CruiseModelMapper cruiseModelMapper;
+    private GetCruisesInterface getCruisesUseCase;
+    private CruiseModelMapper cruiseModelMapper;
 
     @Inject
-    public CruisesListPresenter(@Named("getCruises") GetCruises getCruisesUseCase, CruiseModelMapper cruiseModelMapper)
+    public CruisesListPresenter(@Named("getCruises") GetCruisesInterface getCruisesUseCase,
+                                CruiseModelMapper cruiseModelMapper)
     {
         this.getCruisesUseCase = getCruisesUseCase;
         this.cruiseModelMapper = cruiseModelMapper;
@@ -62,23 +62,18 @@ public class CruisesListPresenter implements Presenter
      */
     public void initialize()
     {
-        this.loadUserList();
+        this.loadCruisesList();
     }
 
     /**
      * Loads all users.
      */
-    private void loadUserList()
+    private void loadCruisesList()
     {
         this.hideViewRetry();
         this.showViewLoading();
         this.getCruisesList();
     }
-
-//    public void onUserClicked(CruiseModel userModel)
-//    {
-//        this.viewListView.viewUser(userModel);
-//    }
 
     private void showViewLoading()
     {
@@ -100,13 +95,6 @@ public class CruisesListPresenter implements Presenter
         this.viewListView.hideRetry();
     }
 
-/*    private void showErrorMessage(ErrorBundle errorBundle)
-    {
-        String errorMessage = ErrorMessageFactory.create(this.viewListView.getContext(),
-                                                         errorBundle.getException());
-        this.viewListView.showError(errorMessage);
-    }*/
-
     private void showUsersCollectionInView(List<Cruise> cruisesCollection)
     {
         final List<CruiseModel> cruisesModelCollection =
@@ -116,7 +104,7 @@ public class CruisesListPresenter implements Presenter
 
     private void getCruisesList()
     {
-        this.getCruisesUseCase.getCruisesByDate(new CruisesListSubscriber());
+        this.getCruisesUseCase.getCruises(new CruisesListSubscriber());
     }
 
     // Subscriber to receive cruises list from observable
@@ -133,7 +121,6 @@ public class CruisesListPresenter implements Presenter
         public void onError(Throwable e)
         {
             CruisesListPresenter.this.hideViewLoading();
-            //CruisesListPresenter.this.showErrorMessage(new DefaultErrorBundle((Exception) e));
             CruisesListPresenter.this.showViewRetry();
         }
 

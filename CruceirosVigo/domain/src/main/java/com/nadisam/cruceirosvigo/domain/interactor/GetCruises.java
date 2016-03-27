@@ -5,25 +5,19 @@ import com.nadisam.cruceirosvigo.domain.executor.PostExecutionThread;
 import com.nadisam.cruceirosvigo.domain.executor.ThreadExecutor;
 import com.nadisam.cruceirosvigo.domain.repository.DataRepositoryInterface;
 
-import java.text.SimpleDateFormat;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;
-import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.Subscriptions;
 
 /**
  * Created by santiagopan on 22/02/16.
  */
-public class GetCruises
+public class GetCruises implements GetCruisesInterface
 {
     private final DataRepositoryInterface dataRepositoryInterface;
     private final ThreadExecutor threadExecutor;
@@ -39,17 +33,19 @@ public class GetCruises
         this.postExecutionThread = postExecutionThread;
     }
 
-    public void getCruises(Subscriber UseCaseSubscriber)
+    @Override
+    public void getCruises(Subscriber<List<Cruise>> useCaseSubscriber)
     {
         this.subscription =  dataRepositoryInterface.getCruises()
                 .subscribeOn(Schedulers.from(threadExecutor))
                 .observeOn(postExecutionThread.getScheduler())
-                .subscribe(UseCaseSubscriber);
+                .subscribe(useCaseSubscriber);
     }
 
     /**
      * Unsubscribes from current {@link rx.Subscription}.
      */
+    @Override
     public void unsubscribe()
     {
         if (!subscription.isUnsubscribed())

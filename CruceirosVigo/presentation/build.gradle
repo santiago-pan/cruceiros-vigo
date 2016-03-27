@@ -25,10 +25,10 @@ android {
         release {
             // To read environment variables start android studio with:
             // /Applications/Android\ Studio.app/Contents/MacOS/studio
-            storeFile file(System.getenv("SANTI_RELEASE_APP_PRIVATE_KEY"))
-            storePassword System.getenv("SANTI_RELEASE_STORE_PW")
-            keyAlias System.getenv("SANTI_RELEASE_APP_ALIAS")
-            keyPassword System.getenv("SANTI_RELEASE_PW")
+            //storeFile file(System.getenv("SANTI_RELEASE_APP_PRIVATE_KEY"))
+            //storePassword System.getenv("SANTI_RELEASE_STORE_PW")
+            //keyAlias System.getenv("SANTI_RELEASE_APP_ALIAS")
+            //keyPassword System.getenv("SANTI_RELEASE_PW")
         }
     }
     buildTypes {

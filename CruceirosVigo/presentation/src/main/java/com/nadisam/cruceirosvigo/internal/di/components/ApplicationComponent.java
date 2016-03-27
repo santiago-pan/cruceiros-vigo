@@ -17,13 +17,17 @@ import dagger.Component;
  */
 @Singleton // Constraints this component to one-per-application or unscoped bindings.
 @Component(modules = ApplicationModule.class)
-public interface ApplicationComponent {
+public interface ApplicationComponent
+{
     void inject(BaseActivity baseActivity);
 
     //Exposed to sub-graphs.
     Context context();
+
     ThreadExecutor threadExecutor();
+
     PostExecutionThread postExecutionThread();
+
     DataRepositoryInterface dataRepository();
 }
 

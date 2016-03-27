@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 
 import com.nadisam.cruceirosvigo.R;
 import com.nadisam.cruceirosvigo.internal.di.components.CruiseComponent;
@@ -21,7 +20,6 @@ import com.nadisam.cruceirosvigo.view.activity.SortMenuOptionListener;
 import com.nadisam.cruceirosvigo.view.adapter.CruisesRecyclerViewAdapter;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -132,13 +130,12 @@ public class CruisesListFragment extends BaseFragment implements CruisesListView
         this.rv_cruise.setAdapter(cruisesAdapter);
     }
 
-    // NEW
     @Override
     public void renderCruiseList(List<CruiseModel> cruiseModelCollection)
     {
         if (cruiseModelCollection != null)
         {
-            this.cruisesAdapter.setCruisesCollection(cruiseModelCollection);
+            this.cruisesAdapter.setCruisesList(cruiseModelCollection);
         }
     }
 

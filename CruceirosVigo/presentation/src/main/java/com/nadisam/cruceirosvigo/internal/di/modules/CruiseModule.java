@@ -1,10 +1,8 @@
 package com.nadisam.cruceirosvigo.internal.di.modules;
 
-import android.provider.ContactsContract;
-
 import com.nadisam.cruceirosvigo.domain.interactor.GetCruises;
+import com.nadisam.cruceirosvigo.domain.interactor.GetCruisesInterface;
 import com.nadisam.cruceirosvigo.internal.di.PerActivity;
-import com.nadisam.data.repository.DataRepository;
 
 import javax.inject.Named;
 
@@ -21,7 +19,11 @@ public class CruiseModule
     {
     }
 
-    @Provides @PerActivity @Named("getCruises") GetCruises provideGetCruises(GetCruises getCruises){
+    @Provides
+    @PerActivity
+    @Named("getCruises")
+    GetCruisesInterface provideGetCruises(GetCruises getCruises)
+    {
         return getCruises;
     }
 }
